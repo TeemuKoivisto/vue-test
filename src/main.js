@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App'
-import HomePage from '@/pages/Home.page'
+import HomePage from '@/pages/home.page'
 
 import NavBar from '@/components/ui/Navbar.component'
 Vue.component('x-navbar', NavBar)
