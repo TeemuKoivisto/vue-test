@@ -4,11 +4,13 @@ import callApi from './callApi'
 export const USER_LOGIN = 'USER_LOGIN'
 export const USER_LOGOUT = 'LOGOUT_USER'
 
-const loginUser = (context, payload) =>
+const API_URL = 'http://localhost:3332'
+
+const loginUser = (context, { payload }) =>
   callApi(context, {
     type: USER_LOGIN,
     request: {
-      url: process.env.API_URL + '/login',
+      url: API_URL + '/login',
       method: 'post',
       data: payload
     }

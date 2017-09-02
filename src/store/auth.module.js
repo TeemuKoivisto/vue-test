@@ -12,7 +12,7 @@ const authState = {
 }
 
 const authGetters = {
-  isUserLoggedIn: state => state.user.id !== undefined,
+  isLoggedIn: state => state.user.email !== undefined,
   userLoggedIn: state => state.user,
   getJwt: state => state.jwt
 }
@@ -23,6 +23,7 @@ const authMutations = {
     state.jwt = payload.jwt
     state.expires = payload.expires
   },
+  [`${USER_LOGIN}_FAIL`] () {},
   [USER_LOGOUT] (state) {
     state.user = {}
     state.jwt = ''

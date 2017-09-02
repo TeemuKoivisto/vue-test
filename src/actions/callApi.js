@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 
-export default (context, request) => {
+export default (context, { type, request }) => {
   return axios({
     url: request.url,
     method: request.method,
@@ -12,9 +12,9 @@ export default (context, request) => {
     }
   })
   .then((res) => {
-    return context.commit(`${request.type}_SUCESS`, res.data)
+    return context.commit(`${type}_SUCCESS`, res.data)
   })
   .catch((err) => {
-    return context.commit(`${request.type}_FAIL`, err.data)
+    return context.commit(`${type}_FAIL`, err.data)
   })
 }
