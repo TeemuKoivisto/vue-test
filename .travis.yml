@@ -4,11 +4,7 @@ node_js:
 install:
   - npm i
   - pip install awscli
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: deploy.sh
-  on:
-    branch: master
+after_success:
+  - sh deploy.sh
 notifications:
   email: false
