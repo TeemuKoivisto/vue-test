@@ -1,8 +1,8 @@
 <template>
-  <main class="main__container">
+  <div class="home__container">
     <h1>hei olen etusivu</h1>
-    <p class="home__text">{{ yo }}</p>
-  </main>
+    <p class="home__text">{{ msg }}</p>
+  </div>
 </template>
 
 <script>
@@ -15,13 +15,13 @@ export default {
 </script>
 
 <style lang="scss">
-.main {
+.home {
   &__container {
     border: 1px solid black;
   }
-}
-.home__text {
-  padding: 0;
-  margin: 0;
+  &__text {
+    padding: 0;
+    margin: 0;
+  }
 }
 </style>

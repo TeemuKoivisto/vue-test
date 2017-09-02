@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import NavBar from '@/components/ui/Navbar.component'
+Vue.component('x-navbar', NavBar)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
