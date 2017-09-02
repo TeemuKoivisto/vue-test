@@ -1,5 +1,5 @@
 import Vue from 'Vue'
-import NavBar from './ui/Navbar.component'
+import NavBar from '@/components/ui/Navbar.component'
 
-// TODO not working
-Vue.component('navbar', NavBar)
+// TODO doesn't work
+Vue.component('x-navbar', NavBar)
