@@ -4,6 +4,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App'
 
+import store from './store'
+
 import HomePage from '@/pages/Home.page'
 import LoginPage from '@/pages/Login.page'
 import MyselfPage from '@/pages/Myself.page'
@@ -30,6 +32,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

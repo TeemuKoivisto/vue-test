@@ -1,0 +1,22 @@
+
+import callApi from './callApi'
+
+export const USER_LOGIN = 'USER_LOGIN'
+export const USER_LOGOUT = 'LOGOUT_USER'
+
+const loginUser = (context, payload) =>
+  callApi(context, {
+    type: USER_LOGIN,
+    request: {
+      url: process.env.API_URL + '/login',
+      method: 'post',
+      data: payload
+    }
+  })
+
+const logoutUser = ({ commit }) => commit(USER_LOGOUT)
+
+export const authActions = {
+  loginUser,
+  logoutUser
+}

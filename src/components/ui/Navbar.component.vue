@@ -19,13 +19,16 @@ export default {
 </script>
 
 <style lang="scss">
+$navbar-color: #333;
+$navbar-height: 100px;
+
 .navbar {
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: red;
-    height: 100px;
+    background-color: $navbar-color;
+    height: $navbar-height;
   }
   &__links {
     display: flex;
