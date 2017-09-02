@@ -3,7 +3,6 @@ node_js:
 - 8
 install:
   - npm i
-  - npm i -g vue-cli
   - pip install awscli
 after_success:
   - npm run build:prod
