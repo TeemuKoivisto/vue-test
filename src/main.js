@@ -8,7 +8,9 @@ import store from './store'
 
 import HomePage from '@/pages/Home.page'
 import LoginPage from '@/pages/Login.page'
+import LoggedInPage from '@/pages/LoggedIn.page'
 import MyselfPage from '@/pages/Myself.page'
+import NotFoundPage from '@/pages/NotFound.page'
 
 import NavBar from '@/components/ui/Navbar.component'
 
@@ -20,10 +22,25 @@ const router = new Router({
   mode: 'history',
   base: '',
   routes: [
+    { path: '/',
+      component: LoggedInPage,
+      meta: { requiresAuth: true },
+      children: [
+        { path: '/myself', name: 'myself', component: MyselfPage }
+      ]
+    },
     { path: '/', name: 'home', component: HomePage },
     { path: '/login', name: 'login', component: LoginPage },
-    { path: '/myself', name: 'myself', component: MyselfPage }
+    { path: '*', component: NotFoundPage }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth && !store.getters.isLoggedIn)) {
+    next({ path: '/login', query: { redirect: to.fullPath } })
+  } else {
+    next()
+  }
 })
 
 Vue.config.productionTip = false
