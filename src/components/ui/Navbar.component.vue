@@ -5,6 +5,10 @@
       <li v-if="isLoggedIn" class="navbar__links__item">
         <router-link to="/myself" class="navbar__link">{{ userLoggedIn.firstname }}</router-link>
       </li>
+      <li class="navbar__links__item">
+        <x-dropdown title="Olen otsikko"></x-dropdown>
+        <router-link to="/myself" class="navbar__link">{{ userLoggedIn.firstname }}</router-link>
+      </li>
     </ul>
     <ul class="navbar__links">
       <li class="navbar__links__item">

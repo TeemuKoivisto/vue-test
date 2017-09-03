@@ -12,9 +12,11 @@ import LoggedInPage from '@/pages/LoggedIn.page'
 import MyselfPage from '@/pages/Myself.page'
 import NotFoundPage from '@/pages/NotFound.page'
 
-import NavBar from '@/components/ui/Navbar.component'
+import Navbar from '@/components/ui/Navbar.component'
+import Dropdown from '@/components/ui/Dropdown.component'
 
-Vue.component('x-navbar', NavBar)
+Vue.component('x-navbar', Navbar)
+Vue.component('x-dropdown', Dropdown)
 
 Vue.use(Router)
 
