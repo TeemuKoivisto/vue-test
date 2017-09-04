@@ -2,7 +2,7 @@
   <div class="home__container">
     <h1>Hei olen etusivu</h1>
     <p class="home__text">{{ msg }}</p>
-    <p>Olen päivitys 3</p>
+    <p>Olen päivitys 4</p>
   </div>
 </template>
 
