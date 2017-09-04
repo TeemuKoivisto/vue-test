@@ -14,7 +14,7 @@
     );
 
   window.addEventListener('load', function() {
-      if ('serviceWorker' in navigator &&
+      if (1 === 0 && 'serviceWorker' in navigator &&
           (window.location.protocol === 'https:' || isLocalhost)) {
         navigator.serviceWorker.register('service-worker.js')
         .then(function(registration) {

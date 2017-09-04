@@ -6,6 +6,10 @@ install:
   - pip install awscli
 after_success:
   - npm run build
-  - sh deploy.sh
+deploy:
+  provider: script
+  script: deploy.sh
+  on:
+    branch: master
 notifications:
   email: false
