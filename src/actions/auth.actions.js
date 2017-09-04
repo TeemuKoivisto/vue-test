@@ -4,8 +4,7 @@ import callApi from './callApi'
 export const USER_LOGIN = 'USER_LOGIN'
 export const USER_LOGOUT = 'LOGOUT_USER'
 
-const API_URL = 'http://localhost:3332'
-console.log(process.env)
+const { API_URL } = process.env
 
 const loginUser = (context, { payload }) =>
   callApi(context, {
