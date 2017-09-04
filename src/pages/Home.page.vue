@@ -1,7 +1,8 @@
 <template>
   <div class="home__container">
-    <h1>hei olen etusivu</h1>
+    <h1>Hei olen etusivu</h1>
     <p class="home__text">{{ msg }}</p>
+    <p>Olen päivitys 1</p>
   </div>
 </template>
 
