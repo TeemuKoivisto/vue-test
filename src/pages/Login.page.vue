@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <form @submit.prevent="handleSubmit">
-      <div>
+  <div class="login__container">
+    <form @submit.prevent="handleSubmit" class="login__form">
+      <div class="form-group">
         <label>Email</label>
         <input v-model="loginForm.email">
       </div>
-      <div>
+      <div class="form-group">
         <label>Password</label>
         <input v-model="loginForm.password" type="password">
       </div>
-      <div>
+      <div class="form-group">
         <button>Login</button>
       </div>
     </form>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'login-page',
   data: () => ({
@@ -26,9 +26,18 @@ export default {
       password: ''
     }
   }),
+  computed: mapGetters([
+    'isLoggedIn',
+    'userLoggedIn'
+  ]),
   methods: { ...{
     handleSubmit () {
       this.loginUser({ payload: this.loginForm })
+        .then(() => {
+          if (this.isLoggedIn) {
+            this.$router.push('/myself')
+          }
+        })
     }
   },
     ...mapActions([
@@ -39,5 +48,24 @@ export default {
 </script>
 
 <style lang="scss">
+  $login-form-width: 500px;
+  .login {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: $login-form-width;
+    }
 
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 </style>

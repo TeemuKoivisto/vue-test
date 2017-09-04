@@ -22,16 +22,15 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  base: '',
   routes: [
+    { path: '/', name: 'home', component: HomePage },
     { path: '/',
       component: LoggedInPage,
       meta: { requiresAuth: true },
       children: [
-        { path: '/myself', name: 'myself', component: MyselfPage }
+        { path: 'myself', name: 'myself', component: MyselfPage }
       ]
     },
-    { path: '/', name: 'home', component: HomePage },
     { path: '/login', name: 'login', component: LoginPage },
     { path: '*', component: NotFoundPage }
   ]

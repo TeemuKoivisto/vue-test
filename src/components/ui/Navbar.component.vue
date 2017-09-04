@@ -30,6 +30,7 @@ export default {
   methods: { ...{
     handleLogout () {
       this.logoutUser()
+      this.$router.push('/')
     }
   },
     ...mapActions([
@@ -57,14 +58,15 @@ $navbar-height: 100px;
     align-items: center;
     width: 100%;
     padding: 0;
-    margin: 0 0 0 30px;
     list-style: none;
 
     &:first-child {
       justify-content: flex-start;
+      margin: 0 0 0 30px;
     }
     &:last-child {
       justify-content: flex-end;
+      margin: 0 30px 0 0;      
     }
 
 
@@ -75,6 +77,7 @@ $navbar-height: 100px;
   &__link {
     text-decoration: none;
     color: white;
+    cursor: pointer;
   }
 }
 </style>
