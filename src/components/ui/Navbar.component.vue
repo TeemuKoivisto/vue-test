@@ -7,7 +7,6 @@
       </li>
       <li class="navbar__links__item">
         <x-dropdown title="Olen otsikko"></x-dropdown>
-        <router-link to="/myself" class="navbar__link">{{ userLoggedIn.firstname }}</router-link>
       </li>
     </ul>
     <ul class="navbar__links">
